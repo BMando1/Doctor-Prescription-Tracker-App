@@ -1,0 +1,7 @@
+<h1>This is the show page</h1>
+<h2>Prescription Info</h2>
+
+<p>Prescribed by: <span><%= @doctor.doctor_name %></span></p>
+<p>Is Eligible for discount? : <span><%= @prescription.discount_eligible  %></span></p>
+
+<%= link_to 'Go to Prescriptions Page', doctor_prescriptions_path(@doctor.id) %>

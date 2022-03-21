@@ -1,0 +1,27 @@
+<h1>This is prescriptions index</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Prescription ID</th>
+            <th>Eligible for discount?</th>
+            <th>Number of Drugs</th>
+            <th>Total Cost</th>
+            <th colspan="3">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @prescriptions.each do |prescription| %>
+            <tr>
+                <td><%= prescription.id %></td>
+                <td><%= prescription.discount_eligible %></td>
+                <td></td>
+                <td></td>
+
+                <td><%= link_to 'See all drugs' %></td>
+                <td><%= link_to 'Update Prescription' %></td>
+                <td><%= link_to 'Delete' %></td>
+            </tr>
+        <%end%>
+    </tbody>
+</table>
