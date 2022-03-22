@@ -5,14 +5,14 @@
 <%= form_with model:[@doctor, @prescription] do |form| %>
 <fieldset>
    <legend>Create new prescription:</legend>
-    <fieldset>
-        <%= form.label :taken_for, 'Prescription is taken for?' %>
-        <%= form.select :taken_for, ["Berlin", "Chicago", "Madrid"] %>
+     <fieldset>
+        <%= form.label :doctor_name, 'Prescribing Doctor:' %>
+        <%= form.select :doctor_name, ["existing_doc1", "existing_doc2", "existing_doc3"] %>
      </fieldset>
 
     <fieldset>
         <%= form.label :taken_for, 'Prescription is taken for?' %>
-        <div><%= form.text_field :taken_for %></div>
+        <%= form.select :taken_for, ["existing condition1", "existing condition2", "existing condition3"] %>
      </fieldset>
     
     <fieldset>

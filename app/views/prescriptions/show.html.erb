@@ -1,7 +1,14 @@
-<h1>This is the show page</h1>
-<h2>Prescription Info</h2>
+<h1>Prescription#show</h1>
 
-<p>Prescribed by: <span><%= @doctor.doctor_name %></span></p>
+<h3><%= link_to 'Home', doctors_path %></h3>
+
+<h1>Prescription Info:</h1>
+
+<p>Prescription ID: <span><%= @prescription.id %></span></p>
+<p>Prescribed by: <span><%= @prescription.doctor_name %></span></p>
+<p>Prescribed taken for: <span><%= @prescription.taken_for %></span></p>
 <p>Is Eligible for discount? : <span><%= @prescription.discount_eligible  %></span></p>
+<p>Total cost: <span><%=  %></span></p>
+<p><%= link_to "See all drugs in this prescription" %></p>
 
 <%= link_to 'Go to Prescriptions Page', doctor_prescriptions_path(@doctor.id) %>
