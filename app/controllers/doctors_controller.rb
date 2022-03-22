@@ -30,7 +30,7 @@ class DoctorsController < ApplicationController
         if @doctor.update(params.require(:doctor).permit(:doctor_name))
             redirect_to doctor_path(@doctor.id)
         else
-            render :new
+            render :edit
         end
     end
 

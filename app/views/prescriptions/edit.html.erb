@@ -1,0 +1,15 @@
+<h1>This is the prescription edit page</h1>
+
+<h1>Update Prescription</h1>
+
+<%= form_with model:[@doctor, @prescription] do |form| %>
+
+<%= form.radio_button(:discount_eligible, true) %>
+<%= form.label :discount_eligible, 'Is prescription eligible for discount?' %>
+
+<%= form.radio_button(:discount_eligible, false) %>
+<%= form.label :discount_eligible, 'Is prescription eligible for discount?' %>
+
+<%= form.submit %>
+
+<% end %>
