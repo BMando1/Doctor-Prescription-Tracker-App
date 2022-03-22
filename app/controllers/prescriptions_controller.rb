@@ -42,4 +42,12 @@ class PrescriptionsController < ApplicationController
             render :edit
         end
     end
+
+    def destroy
+        @doctor = Doctor.find(params[:doctor_id])
+        @prescription = @doctor.prescriptions.find(params[:id])
+        @prescription.destroy
+        redirect_to doctor_prescriptions_path
+
+    end
 end

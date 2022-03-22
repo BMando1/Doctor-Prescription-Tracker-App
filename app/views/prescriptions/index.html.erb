@@ -20,8 +20,8 @@
                 <td></td>
 
                 <td><%= link_to 'See prescription info',  doctor_prescription_path(@doctor.id, prescription.id) %></td>
-                <td><%= link_to 'Update Prescription' %></td>
-                <td><%= link_to 'Delete' %></td>
+                <td><%= link_to 'Update Prescription', edit_doctor_prescription_path(@doctor.id, prescription.id) %></td>
+                <td><%= link_to 'Delete', doctor_prescription_path(@doctor.id, prescription.id), method: :Delete, data: {confirm: 'Are you sure?'} %></td>
             </tr>
         <%end%>
     </tbody>
