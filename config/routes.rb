@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'drugs/index'
+  get 'drugs/new'
+  get 'drugs/create'
+  get 'drugs/show'
+  get 'drugs/edit'
+  get 'drugs/update'
+  get 'drugs/destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   # doctors routes =>
@@ -11,8 +18,6 @@ Rails.application.routes.draw do
   # patch 'doctors/:id', to: 'doctors#update'
   # delete 'doctors/:id', to: 'doctors#destroy'
 
-  
-  resources :prescriptions
   resources :doctors do
     resources :prescriptions do
       resources :drugs

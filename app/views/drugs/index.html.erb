@@ -1,0 +1,39 @@
+<h1>Drugs#index</h1>
+
+<h3><%= link_to 'Home', doctors_path %></h3>
+<h3><%= link_to 'New Drug'  %></h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>PK - Drug ID</th>
+            <th>FK - Prescription ID</th>
+            <th>FK - Doctor ID</th>
+            <th>Drug Name</th>
+            <th>Taken for?</th>
+            <th>Prescribed by</th> 
+            <th>Quantity</th> 
+            <th>Price</th> 
+            <th colspan="4">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @drugs.each do |drug| %>
+            <tr>
+                <td><%= drug.id %></td>
+                <td><%= @prescription.id %></td>
+                <td><%= @doctor.id %></td>
+                <td><%= drug.name %></td>
+                <td><%= drug.taken_for %></td>
+                <td><%= drug.doctor_name %></td>
+                <td><%= drug.quantity %></td>
+                <td><%= drug.cost %></td>
+                <td><%= link_to 'Drug Info' %></td>
+                <td><%= link_to 'Apply Discount' %></td>
+                <td><%= link_to 'Update' %></td>
+                <td><%= link_to 'Delete'%></td>
+            </tr>
+        <%end%>
+    </tbody> 
+</table>
+

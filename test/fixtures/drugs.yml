@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prescription: one
+  doctor: one
+  doctor_name: MyString
+  taken_for: MyString
+  name: MyString
+  cost: 1
+  quantity: 1
+
+two:
+  prescription: two
+  doctor: two
+  doctor_name: MyString
+  taken_for: MyString
+  name: MyString
+  cost: 1
+  quantity: 1
