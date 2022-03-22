@@ -1,2 +1,13 @@
 <h1>Drugs#show</h1>
-<p>Find me in app/views/drugs/show.html.erb</p>
+
+<h3><%= link_to 'Home', doctors_path %></h3>
+
+<h1>Drug Info:</h1>
+
+<p>Drug ID: <span><%= @drug.id %></span></p>
+<p>Drug Name: <span><%= @drug.name %></span></p>
+<p>Taken for: <span><%= @drug.taken_for %></span></p>
+<p>Price: <span><%= @drug.cost %></span></p>
+<p>Quantity: <span><%= @drug.quantity %></span></p>
+
+<%= link_to 'Go to Drugs Page', doctor_prescription_drugs_path(@doctor.id, @prescription.id) %>

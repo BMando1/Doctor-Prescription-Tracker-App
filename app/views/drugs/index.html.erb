@@ -1,7 +1,7 @@
 <h1>Drugs#index</h1>
 
 <h3><%= link_to 'Home', doctors_path %></h3>
-<h3><%= link_to 'New Drug'  %></h3>
+<h3><%= link_to 'New Drug', new_doctor_prescription_drug_path(@doctor.id, @prescription.id)  %></h3>
 
 <table>
     <thead>
@@ -28,7 +28,7 @@
                 <td><%= drug.doctor_name %></td>
                 <td><%= drug.quantity %></td>
                 <td><%= drug.cost %></td>
-                <td><%= link_to 'Drug Info' %></td>
+                <td><%= link_to 'Drug Info',  doctor_prescription_drug_path(@doctor.id, @prescription.id, drug.id)  %></td>
                 <td><%= link_to 'Apply Discount' %></td>
                 <td><%= link_to 'Update' %></td>
                 <td><%= link_to 'Delete'%></td>

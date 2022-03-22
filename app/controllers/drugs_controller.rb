@@ -6,12 +6,19 @@ class DrugsController < ApplicationController
   end
 
   def new
+    @doctor = Doctor.find(params[:doctor_id])
+    @prescription = @doctor.prescriptions.find(params[:prescription_id])
+    @drug = @prescription.drugs.build
+
   end
 
   def create
   end
 
   def show
+    @doctor = Doctor.find(params[:doctor_id])
+    @prescription = @doctor.prescriptions.find(params[:prescription_id])
+    @drug = @prescription.drugs.find(params[:id])
   end
 
   def edit
@@ -22,5 +29,5 @@ class DrugsController < ApplicationController
 
   def destroy
   end
-  
+
 end

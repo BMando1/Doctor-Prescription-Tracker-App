@@ -9,6 +9,6 @@
 <p>Prescribed taken for: <span><%= @prescription.taken_for %></span></p>
 <p>Is Eligible for discount? : <span><%= @prescription.discount_eligible  %></span></p>
 <p>Total cost: <span><%=  %></span></p>
-<p><%= link_to "See all drugs in this prescription" %></p>
+<p><%= link_to "See all drugs in this prescription",doctor_prescription_drugs_path(@doctor.id, @prescription.id)%></p>
 
 <%= link_to 'Go to Prescriptions Page', doctor_prescriptions_path(@doctor.id) %>

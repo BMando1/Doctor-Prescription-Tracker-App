@@ -4,7 +4,7 @@
 
 <%= form_with model:[@doctor, @prescription] do |form| %>
 <fieldset>
-   <legend>Create new prescription:</legend>
+   <legend>Add new prescription:</legend>
      <fieldset>
         <%= form.label :doctor_name, 'Prescribing Doctor:' %>
         <%= form.select :doctor_name, ["existing_doc1", "existing_doc2", "existing_doc3"] %>

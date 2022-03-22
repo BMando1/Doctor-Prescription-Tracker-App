@@ -1,2 +1,41 @@
 <h1>Drugs#new</h1>
-<p>Find me in app/views/drugs/new.html.erb</p>
+
+<h3><%= link_to 'Home', doctors_path %></h3>
+
+<%= form_with model:[@doctor, @prescription, @drug] do |form| %>
+
+<fieldset>
+    <legend>Add new drug:</legend>
+     <fieldset>
+        <%= form.label :name, 'Drug Name:' %>
+        <%= form.text_field :name  %>
+     </fieldset>
+
+     <fieldset>
+        <%= form.label :doctor_name, 'Prescribing Doctor:' %>
+        <%= form.select :doctor_name, ["existing_doc1", "existing_doc2", "existing_doc3"] %>
+     </fieldset>
+
+     <fieldset>
+        <%= form.label :taken_for, 'Prescription is taken for?' %>
+        <%= form.select :taken_for, ["existing condition1", "existing condition2", "existing condition3"] %>
+     </fieldset>
+
+     <fieldset>
+         <%= form.label :cost, 'Price' %>
+        <%= form.number_field :cost %>
+     </fieldset>
+
+     <fieldset>
+         <%= form.label :cost, 'Price' %>
+        <%= form.number_field :cost %>
+     </fieldset>
+
+     <fieldset>
+        <%= form.label :quantity, 'Quantity' %>
+        <%= form.number_field :quantity %>
+     </fieldset>
+     <div><%= form.submit %></div>
+</fieldset>
+
+<% end %>
