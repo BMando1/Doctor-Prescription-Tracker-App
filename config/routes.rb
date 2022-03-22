@@ -15,4 +15,6 @@ Rails.application.routes.draw do
     resources :prescriptions
   end
 
+  root to: "doctors#index"
+
 end
