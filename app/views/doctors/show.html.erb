@@ -1,6 +1,8 @@
 <h1>Doctor#show</h1>
-<h2>Doctor Info</h2>
+<h1>Doctor Info:</h1>
 
-<p>Doctor Name: <span><%= @doctor.doctor_name %></span></p>
-
-<%= link_to 'Go to Doctors Page', doctors_path %>
+<p>Doctor ID: <span><%= @doctor.doctor_name %></span></p>
+<p>Doctor Name: <span><%= @doctor.id %></span></p>
+<p>Number of Prescriptions: <span><%=  %></span></p>
+<p><%= link_to "See all #{@doctor.doctor_name}'s prescriptions", doctor_prescriptions_path(@doctor.id) %></p>
+<p><%= link_to 'Go to Doctors Page', doctors_path %></p>

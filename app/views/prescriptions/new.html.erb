@@ -1,15 +1,28 @@
-<h1>This is the create new prescription page</h1>
+<h1>Prescriptions#new</h1>
 
-<h1>Add new prescription</h1>
+<h3><%= link_to 'Home', doctors_path %></h3>
 
 <%= form_with model:[@doctor, @prescription] do |form| %>
+<fieldset>
+   <legend>Create new prescription:</legend>
+    <fieldset>
+        <%= form.label :taken_for, 'Prescription is taken for?' %>
+        <%= form.select :taken_for, ["Berlin", "Chicago", "Madrid"] %>
+     </fieldset>
 
-<%= form.radio_button(:discount_eligible, true) %>
-<%= form.label :discount_eligible, 'Is prescription eligible for discount?' %>
-
-<%= form.radio_button(:discount_eligible, false) %>
-<%= form.label :discount_eligible, 'Is prescription eligible for discount?' %>
-
-<%= form.submit %>
-
+    <fieldset>
+        <%= form.label :taken_for, 'Prescription is taken for?' %>
+        <div><%= form.text_field :taken_for %></div>
+     </fieldset>
+    
+    <fieldset>
+        <div>Is prescription eligible for discount?</div>
+        <%= form.radio_button(:discount_eligible, true) %>
+        <%= form.label :discount_eligible_true, 'No' %>
+        <%= form.radio_button(:discount_eligible, false) %>
+        <%= form.label :discount_eligible_false, 'Yes' %>
+        
+    </fieldset>
+    <div><%= form.submit %></div>
+</fieldset>
 <% end %>

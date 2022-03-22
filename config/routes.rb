@@ -11,8 +11,12 @@ Rails.application.routes.draw do
   # patch 'doctors/:id', to: 'doctors#update'
   # delete 'doctors/:id', to: 'doctors#destroy'
 
+  
+  resources :prescriptions
   resources :doctors do
-    resources :prescriptions
+    resources :prescriptions do
+      resources :drugs
+    end
   end
 
   root to: "doctors#index"

@@ -1,11 +1,14 @@
 <h1>Doctors#new</h1>
-<h1>Register a new Doctor</h1>
+
+<h3><%= link_to 'Home', doctors_path %></h3>
 
 <%= form_with model: @doctor do |form|%>
 
-<%= form.label :doctor_name %>
-<%= form.text_field :doctor_name %>
-
-<%= form.submit %>
+<fieldset>
+    <legend>Register New Doctor :</legend>
+    <%= form.label :doctor_name, 'Doctor name:' %>
+    <%= form.text_field :doctor_name %>
+    <div><%= form.submit %></div>
+</fieldset>
 
 <% end %>

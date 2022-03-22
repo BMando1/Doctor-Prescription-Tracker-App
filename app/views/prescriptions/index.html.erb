@@ -1,12 +1,17 @@
-<h1>This is prescriptions index</h1>
+<h1>Prescriptions#index</h1>
+
+<h3><%= link_to 'Home', doctors_path %></h3>
 <h3><%= link_to 'New Prescription', new_doctor_prescription_path(@doctor.id) %></h3>
 
 <table>
     <thead>
         <tr>
-            <th>Prescription ID</th>
-            <th>Eligible for discount?</th>
+            <th>PK - Prescription ID</th>
+            <th>FK - Doctor ID</th>
+            <th>Prescribed by</th>
+            <th>Taken for</th>
             <th>Number of Drugs</th>
+            <th>Eligible for discount?</th>
             <th>Total Cost</th>
             <th colspan="3">Actions</th>
         </tr>
@@ -15,11 +20,14 @@
         <% @prescriptions.each do |prescription| %>
             <tr>
                 <td><%= prescription.id %></td>
+                <td><%= @doctor.id %></td>
+                <td><%= @doctor.doctor_name %></td>
+                <td><%=  %></td>
+                <td></td>
                 <td><%= prescription.discount_eligible %></td>
                 <td></td>
-                <td></td>
 
-                <td><%= link_to 'See prescription info',  doctor_prescription_path(@doctor.id, prescription.id) %></td>
+                <td><%= link_to 'Prescription I',  doctor_prescription_path(@doctor.id, prescription.id) %></td>
                 <td><%= link_to 'Update Prescription', edit_doctor_prescription_path(@doctor.id, prescription.id) %></td>
                 <td><%= link_to 'Delete', doctor_prescription_path(@doctor.id, prescription.id), method: :Delete, data: {confirm: 'Are you sure?'} %></td>
             </tr>
